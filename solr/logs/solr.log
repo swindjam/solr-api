@@ -1,0 +1,39 @@
+2022-07-02 22:00:46.368 INFO  (main) [] o.e.j.u.log Logging initialized @694ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-07-02 22:00:46.527 INFO  (main) [] o.e.j.s.Server jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 17.0.3+7
+2022-07-02 22:00:46.728 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2022-07-02 22:00:46.736 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.0.0
+2022-07-02 22:00:46.736 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2022-07-02 22:00:46.736 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: /opt/solr
+2022-07-02 22:00:46.736 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2022-07-02T22:00:46.736756729Z
+2022-07-02 22:00:46.740 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: /var/solr/data (source: system property: solr.solr.home)
+2022-07-02 22:00:46.742 INFO  (main) [] o.a.s.c.SolrXmlConfig solr.xml not found in SOLR_HOME, using built-in default
+2022-07-02 22:00:46.742 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from /opt/solr/server/solr/solr.xml
+2022-07-02 22:00:47.388 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2022-07-02 22:00:47.396 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2022-07-02 22:00:47.592 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
+2022-07-02 22:00:47.593 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [films]
+2022-07-02 22:00:47.599 INFO  (coreLoadExecutor-10-thread-1) [] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
+2022-07-02 22:00:47.648 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.0.0
+2022-07-02 22:00:47.666 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@89c10b7{/solr,file:///opt/solr-9.0.0/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-9.0.0/server/solr-webapp/webapp}
+2022-07-02 22:00:47.675 INFO  (main) [] o.e.j.s.RequestLogWriter Opened /var/solr/logs/2022_07_02.request.log
+2022-07-02 22:00:47.683 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@14dda234{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2022-07-02 22:00:47.683 INFO  (main) [] o.e.j.s.Server Started @2010ms
+2022-07-02 22:00:47.723 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.s.IndexSchema Schema name=default-config
+2022-07-02 22:00:48.300 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2022-07-02 22:00:48.300 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.c.CoreContainer Creating SolrCore 'films' using configuration from instancedir /var/solr/data/films, trusted=true
+2022-07-02 22:00:48.325 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.c.SolrCore Opening new SolrCore at [/var/solr/data/films], dataDir=[/var/solr/data/films/data/]
+2022-07-02 22:00:48.708 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2022-07-02 22:00:48.708 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2022-07-02 22:00:48.735 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2022-07-02 22:00:48.735 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2022-07-02 22:00:48.879 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/films/conf
+2022-07-02 22:00:48.889 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.s.DirectSolrSpellChecker init: {name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, accuracy=0.5, maxQueryFrequency=0.01, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4}
+2022-07-02 22:00:48.896 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2022-07-02 22:00:48.905 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2022-07-02 22:00:48.906 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2022-07-02 22:00:48.911 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2022-07-02 22:00:50.446 INFO  (qtp1750286943-20) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1656799251437} status=0 QTime=4
+2022-07-02 22:00:51.252 INFO  (qtp1750286943-21) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1656799251437} status=0 QTime=9
+2022-07-02 22:00:52.289 INFO  (qtp1750286943-22) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&_=1656799251466} hits=1 status=0 QTime=20
+2022-07-02 22:04:11.256 INFO  (qtp1750286943-22) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1656799251437} status=0 QTime=0
+2022-07-02 22:04:12.294 INFO  (qtp1750286943-24) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1656799251437} status=0 QTime=12

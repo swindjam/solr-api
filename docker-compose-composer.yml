@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+
+  composer:
+    image: composer:2.3.7
+    command:
+    
+
+    version: '3.7'
+services:
+
+  
+
+  solr.local:
+    image: solr:9.0.0
+    ports:
+      - "8983:8983"
+    volumes:
+      - data:/var/solr
+    command:
+      - solr-precreate
+      - gettingstarted
+
+    volumes:
+      - ./solr/data:/var/solr
+      - ./solr/config:/opt/solr/server/solr/configsets:consistent
+    ports:
+      - 8983:8983
+    command: solr-precreate gettingstarted
+
+    nginx:
+    image: nginx:1.23.0
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d:consistent
+    ports:
+      - 8080:8080
+    links:
+      - php
+
+  php:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/:/app/src:delegated
+      - ./php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:consistent
+    depends_on:
+      - solr.local
+    environment:
+      SOLR: "solr.local/solr/films"

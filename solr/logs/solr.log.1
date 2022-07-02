@@ -1,0 +1,35 @@
+2022-07-02 21:56:46.777 INFO  (main) [] o.e.j.u.log Logging initialized @678ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-07-02 21:56:46.946 INFO  (main) [] o.e.j.s.Server jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 17.0.3+7
+2022-07-02 21:56:47.169 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2022-07-02 21:56:47.178 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.0.0
+2022-07-02 21:56:47.178 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2022-07-02 21:56:47.178 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: /opt/solr
+2022-07-02 21:56:47.178 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2022-07-02T21:56:47.178926951Z
+2022-07-02 21:56:47.183 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: /var/solr/data (source: system property: solr.solr.home)
+2022-07-02 21:56:47.185 INFO  (main) [] o.a.s.c.SolrXmlConfig solr.xml not found in SOLR_HOME, using built-in default
+2022-07-02 21:56:47.185 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from /opt/solr/server/solr/solr.xml
+2022-07-02 21:56:48.010 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2022-07-02 21:56:48.017 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2022-07-02 21:56:48.187 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
+2022-07-02 21:56:48.188 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [films]
+2022-07-02 21:56:48.194 INFO  (coreLoadExecutor-10-thread-1) [] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
+2022-07-02 21:56:48.241 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.0.0
+2022-07-02 21:56:48.254 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@757d6814{/solr,file:///opt/solr-9.0.0/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-9.0.0/server/solr-webapp/webapp}
+2022-07-02 21:56:48.263 INFO  (main) [] o.e.j.s.RequestLogWriter Opened /var/solr/logs/2022_07_02.request.log
+2022-07-02 21:56:48.269 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@64a8c844{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2022-07-02 21:56:48.269 INFO  (main) [] o.e.j.s.Server Started @2171ms
+2022-07-02 21:56:48.319 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.s.IndexSchema Schema name=default-config
+2022-07-02 21:56:48.912 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2022-07-02 21:56:48.912 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.c.CoreContainer Creating SolrCore 'films' using configuration from instancedir /var/solr/data/films, trusted=true
+2022-07-02 21:56:48.936 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.c.SolrCore Opening new SolrCore at [/var/solr/data/films], dataDir=[/var/solr/data/films/data/]
+2022-07-02 21:56:49.479 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2022-07-02 21:56:49.479 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2022-07-02 21:56:49.498 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2022-07-02 21:56:49.498 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2022-07-02 21:56:49.565 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/films/conf
+2022-07-02 21:56:49.577 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.s.DirectSolrSpellChecker init: {maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, accuracy=0.5, maxQueryFrequency=0.01, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal}
+2022-07-02 21:56:49.586 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2022-07-02 21:56:49.588 INFO  (coreLoadExecutor-10-thread-1) [ x:films] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1737279678277746688
+2022-07-02 21:56:49.592 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2022-07-02 21:56:49.592 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2022-07-02 21:56:49.597 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
