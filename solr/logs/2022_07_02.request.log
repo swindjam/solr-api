@@ -36,3 +36,9 @@
 192.168.80.1 - - [02/Jul/2022:22:00:52 +0000] "GET /solr/films/select?_=1656799251466&indent=true&q=*:*&q.op=OR HTTP/1.1" 200 443
 192.168.80.1 - - [02/Jul/2022:22:04:11 +0000] "GET /solr/admin/cores?_=1656799251437&indexInfo=false&wt=json HTTP/1.1" 200 356
 192.168.80.1 - - [02/Jul/2022:22:04:12 +0000] "GET /solr/admin/info/system?_=1656799251437&wt=json HTTP/1.1" 200 1332
+192.168.80.1 - - [02/Jul/2022:22:07:41 +0000] "GET /solr/admin/cores?_=1656799251437&indexInfo=false&wt=json HTTP/1.1" 200 356
+192.168.80.1 - - [02/Jul/2022:22:07:42 +0000] "GET /solr/admin/info/system?_=1656799251437&wt=json HTTP/1.1" 200 1320
+192.168.80.1 - - [02/Jul/2022:22:07:43 +0000] "GET /solr/films/select?_=1656799251466&indent=true&q=*:*&q.op=OR HTTP/1.1" 200 442
+192.168.80.1 - - [02/Jul/2022:22:10:30 +0000] "GET /solr/films/select?_=1656799251466&indent=true&q=*:*&q.op=OR HTTP/1.1" 200 443
+192.168.80.1 - - [02/Jul/2022:22:10:31 +0000] "GET /solr/admin/info/system?_=1656799251437&wt=json HTTP/1.1" 200 1332
+192.168.80.1 - - [02/Jul/2022:22:10:32 +0000] "GET /solr/admin/cores?_=1656799251437&indexInfo=false&wt=json HTTP/1.1" 200 355

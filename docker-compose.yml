@@ -12,6 +12,27 @@ services:
       - solr-precreate
       - films
 
+  nginx:
+    image: nginx:1.23.0
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d:consistent
+    ports:
+      - 8080:8080
+    links:
+      - php
+
+  php:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/:/app/src:delegated
+      - ./php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:consistent
+    depends_on:
+      - solr.local
+    environment:
+      SOLR: "solr.local/solr/films"
+
 volumes:
   data: 
     driver: local

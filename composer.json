@@ -1,0 +1,13 @@
+{
+    "name": "swindjam/solr-api",
+    "type": "project",
+    "authors": [
+        {
+            "name": "James Swindley"
+        }
+    ],
+    "require": {
+        "php": "8.1",
+        "solarium/solarium": "6.2.4"
+    }
+}

@@ -1,5 +1,8 @@
-##Solr API
+Solr API
 --------
+This project is a simple PHP API which requests data from a Solr instance.
+The setup is all via Docker, to require minimal local dependencies and to be easily reproducable.
+
 
 Solr setup
 -----
@@ -10,3 +13,14 @@ This will be started with the data stored in the repo for this demo purpose, alt
 In terms of the docker container, it sets up a `films` collection on startup of the container. 
 As the config and the data is stored in the `solr` directory, this will work out of the box with no additional configuration.
 The data should be returned by sending a query in the Solr admin UI which can be found here `http://localhost:8983/solr/#/films/query`
+
+
+PHP Setup
+------
+
+The PHP setup uses composer via docker to avoid needing to install PHP or composer locally.
+The composer commands are akk run via `docker-compose-composer.yml`, which can be run with this command `docker-compose -f docker-compose-composer.yml run compose`
+
+TODO
+- PHP XDebug
+- PHP Solarium client usage
