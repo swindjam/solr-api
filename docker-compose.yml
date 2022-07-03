@@ -15,11 +15,14 @@ services:
   nginx:
     image: nginx:1.23.0
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d:consistent
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/films.conf:consistent
+      - ./src:/app/src:delegated
     ports:
       - 8080:8080
-    links:
+    depends_on:
       - php
+    networks:
+      - api-network
 
   php:
     build: 
@@ -27,11 +30,14 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./src/:/app/src:delegated
-      - ./php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:consistent
+      - ./vendor:/app/vendor:delegated
+      #- ./php-fpm.conf:/usr/local/etc/php-fpm.conf:consistent
     depends_on:
       - solr.local
     environment:
       SOLR: "solr.local/solr/films"
+    networks:
+      - api-network
 
 volumes:
   data: 
@@ -39,4 +45,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: './solr'
+      device: '/solr'
+
+networks:
+  api-network:

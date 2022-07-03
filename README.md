@@ -21,6 +21,15 @@ PHP Setup
 The PHP setup uses composer via docker to avoid needing to install PHP or composer locally.
 The composer commands are akk run via `docker-compose-composer.yml`, which can be run with this command `docker-compose -f docker-compose-composer.yml run compose`
 
+
+Running the Project
+-------
+
+To run the project, simply run `docker-compose up` in the root of the project.
+This will then create a container for nginx, php-fpm and Solr.
+The nginx server will then be available here `http://localhost:8080`
+
 TODO
 - PHP XDebug
 - PHP Solarium client usage
+- Nginx config fiddle
