@@ -3,6 +3,9 @@
 namespace SolrAPI;
 
 use Solarium\Client;
+use Solarium\Core\Client\Adapter\Curl;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 
 class SolrRequester
 {
@@ -12,33 +15,32 @@ class SolrRequester
 
     public function __construct()
     {
-        $config = array(
-            'endpoint' => array(
-                'localhost' => array(
-                    'host' => '127.0.0.1',
+        $config = [
+            'endpoint' => [
+                'localhost' => [
+                    'host' => 'solr.local',
                     'port' => 8983,
                     'path' => '/',
-                    'core' => 'films',
-                    // For SolrCloud you need to provide a collection instead of core:
-                    // 'collection' => 'techproducts',
-                    // Set the `hostContext` for the Solr web application if it's not the default 'solr':
-                    // 'context' => 'solr',
-                )
-            )
-        );
-        $this->client = new Client($adapter, $eventDispatcher, $config);
+                    'context' => 'solr',
+                    'collection' => 'films',
+                ]
+            ]
+        ];
+        $adapter = new Curl();
+        $dispatcher = new EventDispatcher();
+        $this->client = new Client($adapter, $dispatcher, $config);
     }
 
-    public function sendRequest(): array
+    public function getFilms(): array
     {
-        // get a select query instance
-        $query = $this->client->createQuery($this->client::QUERY_SELECT);
+        $query = $this->client->createSelect();
 
-        // this executes the query and returns the result
-        $resultset = $this->client->execute($query);
+        $resultSet = $this->client->execute($query);
 
         $films = [];
-        foreach ($resultset as $document) {
+        $documents = $resultSet->getDocuments();
+        foreach ($documents as $document) {
+            var_dump($document);
             $films[] = new Film(
                 $document->id,
                 $document->name,
@@ -49,5 +51,22 @@ class SolrRequester
         }
 
         return $films;
+    }
+
+    public function addFilms(): void
+    {
+        $query = $this->client->createUpdate();
+
+        $doc1 = $query->createDocument();
+        $doc1->id = 1;
+        $doc1->name = 'Die Hard';
+        $doc1->genre = 'Action';
+        $doc1->age_rating = 18;
+        $doc1->actors = ['Bruce Willis', 'Alan Rickman'];
+        
+        $query->addDocuments([$doc1]);
+        $query->addCommit();
+
+        $result = $this->client->update($query);
     }
 }

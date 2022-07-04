@@ -28,8 +28,3 @@ Running the Project
 To run the project, simply run `docker-compose up` in the root of the project.
 This will then create a container for nginx, php-fpm and Solr.
 The nginx server will then be available here `http://localhost:8080`
-
-TODO
-- PHP XDebug
-- PHP Solarium client usage
-- Nginx config fiddle

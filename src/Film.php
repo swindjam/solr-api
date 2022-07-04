@@ -5,12 +5,12 @@ namespace SolrAPI;
 class Film {
 
     protected $id;
-    protected $name;
-    protected $genre;
+    protected $name = [];
+    protected $genre = [];
     protected $ageRating;
     protected $actors = [];
 
-    public function __construct(string $id, string $name, string $genre, int $ageRating, array $actors)
+    public function __construct(string $id, array $name, array $genre, int $ageRating, array $actors)
     {
         $this->id = $id;
         $this->name = $name;
@@ -24,12 +24,12 @@ class Film {
         return $this->id;
     }
 
-    public function getName(): string
+    public function getName(): array
     {
         return $this->name;
     }
 
-    public function getGenre(): string
+    public function getGenre(): array
     {
         return $this->genre;
     }

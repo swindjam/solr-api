@@ -16,7 +16,7 @@ services:
     command:
       - composer
       - require
-      - solarium/solarium:6.2.4
+      - symfony/event-dispatcher
 
   install:
     image: composer:2.3.7
@@ -25,3 +25,11 @@ services:
     command:
       - composer
       - install
+
+  autoload:
+    image: composer:2.3.7
+    volumes:
+      - ./:/app:consistent
+    command:
+      - composer
+      - dumpautoload

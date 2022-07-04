@@ -1,17 +1,15 @@
 <?php
+$a=1;
+use SolrAPI\SolrRequester;
 
-use SolrAPI/SolrRequester;
-
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 $solrRequester = new SolrRequester();
-$films = $solrRequester->sendRequest();
-
-var_dump($response);
+$films = $solrRequester->getFilms();
 
 echo json_encode([
     'films' => array_map(
-        fn(Film $film) => [
+        fn(SolrAPI\Film $film) => [
             'id' => $film->getId(),
             'name' => $film->getName(),
             'genre' => $film->getGenre(),
